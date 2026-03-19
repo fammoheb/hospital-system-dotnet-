@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors - Hospital Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">🏥 Hospital Management</div>
+            <ul class="navbar-nav">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="doctors.html" class="active">Doctors</a></li>
+                <li><a href="patients.html">Patients</a></li>
+                <li><a href="appointments.html">Appointments</a></li>
+                <li><a href="departments.html">Departments</a></li>
+            </ul>
+            <div class="navbar-right">
+                <div class="user-info" id="userInfo"></div>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="action-bar">
+            <h2>Doctors</h2>
+            <div class="action-bar-right" id="adminActions" style="display: none;">
+                <button class="btn btn-primary" onclick="openAddDoctorModal()">+ Add Doctor</button>
+            </div>
+        </div>
+
+        <div id="doctorsContainer" class="spinner-container">
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Doctor Modal -->
+    <div id="doctorModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add Doctor</h2>
+                <button class="modal-close" onclick="closeDoctorModal()">×</button>
+            </div>
+            <form id="doctorForm">
+                <div class="form-group">
+                    <label for="doctorFullName">Full Name</label>
+                    <input type="text" id="doctorFullName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="doctorEmail">Email</label>
+                    <input type="email" id="doctorEmail" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="doctorPassword">Password</label>
+                    <input type="password" id="doctorPassword" placeholder="Leave empty to keep current password">
+                </div>
+
+                <div class="form-group">
+                    <label for="doctorSpecialization">Specialization</label>
+                    <input type="text" id="doctorSpecialization" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="doctorBio">Bio</label>
+                    <textarea id="doctorBio" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="doctorYearsOfExperience">Years of Experience</label>
+                    <input type="number" id="doctorYearsOfExperience" min="0" max="60" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="doctorLicenseNumber">License Number</label>
+                    <input type="text" id="doctorLicenseNumber" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="doctorDepartment">Department</label>
+                    <select id="doctorDepartment" required>
+                        <option value="">Select a department</option>
+                    </select>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeDoctorModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Doctor</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/doctors.js"></script>
+</body>
+</html>

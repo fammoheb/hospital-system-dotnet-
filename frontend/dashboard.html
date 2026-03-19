@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Hospital Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">🏥 Hospital Management</div>
+            <ul class="navbar-nav" id="navbar-nav">
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="doctors.html">Doctors</a></li>
+                <li><a href="patients.html">Patients</a></li>
+                <li><a href="appointments.html">Appointments</a></li>
+                <li><a href="departments.html">Departments</a></li>
+            </ul>
+            <div class="navbar-right">
+                <div class="user-info" id="userInfo"></div>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="adminDashboard" style="display: none;">
+            <h1>Administrator Dashboard</h1>
+            
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-card">
+                    <h3>Total Doctors</h3>
+                    <div class="stat-number" id="doctorCount">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Patients</h3>
+                    <div class="stat-number" id="patientCount">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Appointments</h3>
+                    <div class="stat-number" id="appointmentCount">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Departments</h3>
+                    <div class="stat-number" id="departmentCount">0</div>
+                </div>
+            </div>
+
+            <div class="action-bar">
+                <h2>Quick Actions</h2>
+                <div class="action-bar-right">
+                    <a href="doctors.html" class="btn btn-primary">Manage Doctors</a>
+                    <a href="patients.html" class="btn btn-secondary">Manage Patients</a>
+                    <a href="appointments.html" class="btn btn-secondary">View Appointments</a>
+                    <a href="departments.html" class="btn btn-secondary">Manage Departments</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="doctorDashboard" style="display: none;">
+            <h1>Doctor Dashboard</h1>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h2>Your Upcoming Appointments</h2>
+                </div>
+                <div id="doctorAppointmentsContainer"></div>
+            </div>
+        </div>
+
+        <div id="patientDashboard" style="display: none;">
+            <h1>Patient Dashboard</h1>
+            
+            <div class="action-bar">
+                <h2>Your Appointments</h2>
+                <div class="action-bar-right">
+                    <a href="appointments.html" class="btn btn-primary">Book Appointment</a>
+                </div>
+            </div>
+
+            <div id="patientAppointmentsContainer"></div>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

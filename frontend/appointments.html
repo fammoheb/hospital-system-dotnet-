@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments - Hospital Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">🏥 Hospital Management</div>
+            <ul class="navbar-nav">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="doctors.html">Doctors</a></li>
+                <li><a href="patients.html">Patients</a></li>
+                <li><a href="appointments.html" class="active">Appointments</a></li>
+                <li><a href="departments.html">Departments</a></li>
+            </ul>
+            <div class="navbar-right">
+                <div class="user-info" id="userInfo"></div>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="action-bar">
+            <h2>Appointments</h2>
+            <div class="action-bar-right" id="patientActions" style="display: none;">
+                <button class="btn btn-primary" onclick="openBookAppointmentModal()">+ Book Appointment</button>
+            </div>
+        </div>
+
+        <div id="appointmentsContainer" class="spinner-container">
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Book Appointment Modal -->
+    <div id="bookAppointmentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Book Appointment</h2>
+                <button class="modal-close" onclick="closeBookAppointmentModal()">×</button>
+            </div>
+            <form id="bookAppointmentForm">
+                <div class="form-group">
+                    <label for="appointmentDoctor">Select Doctor</label>
+                    <select id="appointmentDoctor" required>
+                        <option value="">Choose a doctor</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="appointmentDate">Appointment Date & Time</label>
+                    <input type="datetime-local" id="appointmentDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="appointmentNotes">Notes (Optional)</label>
+                    <textarea id="appointmentNotes"></textarea>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeBookAppointmentModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Book Appointment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Update Appointment Status Modal -->
+    <div id="updateStatusModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Update Appointment Status</h2>
+                <button class="modal-close" onclick="closeUpdateStatusModal()">×</button>
+            </div>
+            <form id="updateStatusForm">
+                <div class="form-group">
+                    <label for="updateStatus">Status</label>
+                    <select id="updateStatus" required>
+                        <option value="">Select status</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Confirmed">Confirmed</option>
+                        <option value="Completed">Completed</option>
+                        <option value="Cancelled">Cancelled</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="updateNotes">Notes</label>
+                    <textarea id="updateNotes"></textarea>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeUpdateStatusModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Update Status</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/appointments.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients - Hospital Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">🏥 Hospital Management</div>
+            <ul class="navbar-nav">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="doctors.html">Doctors</a></li>
+                <li><a href="patients.html" class="active">Patients</a></li>
+                <li><a href="appointments.html">Appointments</a></li>
+                <li><a href="departments.html">Departments</a></li>
+            </ul>
+            <div class="navbar-right">
+                <div class="user-info" id="userInfo"></div>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="action-bar">
+            <h2>Patients</h2>
+            <div class="action-bar-right" id="adminActions" style="display: none;">
+                <button class="btn btn-primary" onclick="openAddPatientModal()">+ Add Patient</button>
+            </div>
+        </div>
+
+        <div id="patientsContainer" class="spinner-container">
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Patient Modal -->
+    <div id="patientModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add Patient</h2>
+                <button class="modal-close" onclick="closePatientModal()">×</button>
+            </div>
+            <form id="patientForm">
+                <div class="form-group">
+                    <label for="patientFullName">Full Name</label>
+                    <input type="text" id="patientFullName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="patientEmail">Email</label>
+                    <input type="email" id="patientEmail" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="patientPassword">Password</label>
+                    <input type="password" id="patientPassword" placeholder="Leave empty to keep current password">
+                </div>
+
+                <div class="form-group">
+                    <label for="patientDateOfBirth">Date of Birth</label>
+                    <input type="date" id="patientDateOfBirth" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="patientBloodType">Blood Type</label>
+                    <select id="patientBloodType" required>
+                        <option value="">Select blood type</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="patientAddress">Address</label>
+                    <textarea id="patientAddress" required></textarea>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closePatientModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Patient</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/patients.js"></script>
+</body>
+</html>

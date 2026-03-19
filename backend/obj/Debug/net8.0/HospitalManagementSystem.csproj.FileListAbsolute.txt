@@ -1,0 +1,8 @@
+C:\Users\Dell\OneDrive\Desktop\Web projects\hospital-system-dotnet-\backend\obj\Debug\net8.0\HospitalManagementSystem.csproj.AssemblyReference.cache
+C:\Users\Dell\OneDrive\Desktop\Web projects\hospital-system-dotnet-\backend\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Dell\OneDrive\Desktop\Web projects\hospital-system-dotnet-\backend\obj\Debug\net8.0\HospitalManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell\OneDrive\Desktop\Web projects\hospital-system-dotnet-\backend\obj\Debug\net8.0\HospitalManagementSystem.AssemblyInfoInputs.cache
+C:\Users\Dell\OneDrive\Desktop\Web projects\hospital-system-dotnet-\backend\obj\Debug\net8.0\HospitalManagementSystem.AssemblyInfo.cs
+C:\Users\Dell\OneDrive\Desktop\Web projects\hospital-system-dotnet-\backend\obj\Debug\net8.0\HospitalManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\Dell\OneDrive\Desktop\Web projects\hospital-system-dotnet-\backend\obj\Debug\net8.0\HospitalManagementSystem.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Dell\OneDrive\Desktop\Web projects\hospital-system-dotnet-\backend\obj\Debug\net8.0\HospitalManagementSystem.MvcApplicationPartsAssemblyInfo.cache
